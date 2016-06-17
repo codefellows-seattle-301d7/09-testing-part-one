@@ -13,13 +13,13 @@
     functionality first to then refactor the test to pass.
     This is common practice in testing ('red-green' refactoring).
 */
-function expect(expression, failureMessage, successMessage) {
-  if (!expression) {
-    console.log('test failed:', failureMessage);
-    return;
-  }
-  console.log('test passed:', successMessage);
-}
+// function expect(expression, failureMessage, successMessage) {
+//   if (!expression) {
+//     console.log('test failed:', failureMessage);
+//     return;
+//   }
+//   console.log('test passed:', successMessage);
+// }
 
 /* Below is an example of our test in action. Run this file in node
     to see what happens when the test fails, then change `ricksFaveAnimal`
@@ -27,10 +27,10 @@ function expect(expression, failureMessage, successMessage) {
 */
 var ricksFaveAnimal = 'hyena';
 
-expect(
-  ricksFaveAnimal === 'penguin',
-  'ricksFavoriteAnimal should equal penguin, but currently equals ' + ricksFaveAnimal,
-  'ricksFavoriteAnimal equals penguin!');
+// expect(
+//   ricksFaveAnimal === 'penguin',
+//   'ricksFavoriteAnimal should equal penguin, but currently equals ' + ricksFaveAnimal,
+//   'ricksFavoriteAnimal equals penguin!');
 
   // BEGIN WORK BELOW - test code by running `node bonus-testing-part-one.js`
   //  in your terminal!
@@ -43,20 +43,29 @@ expect(
   */
 
 var favoriteAnimals = ['elephants', 'penguins', 'eagles', 'camels'];
-var nextAnimal;
-
+var nextAnimal = favoriteAnimals[Math.floor(Math.random() * favoriteAnimals.length)];
   /* TODO:
-      Assign one of your favorite animals dynamically by chance to the 
+      Assign one of your favorite animals dynamically by chance to the
       nextAnimal variable   :-)
       Your code begins on the next line: */
 
   /* TODO:
       Write a test! Use the `expect()` function we defined earlier to ensure
       that an element in the favoriteAnimals array was assigned to nextAnimal.
-      No hard-coded results allowed! (ex: seeing if nextAnimal is equal to 
+      No hard-coded results allowed! (ex: seeing if nextAnimal is equal to
       just 'penguin').
       Remember to: pass in your expression, and write a failure and a success
       message. Your test begins on the next line: */
 
+function expect(expression, failureMessage, successMessage) {
+  if (!expression) {
+    console.log('test failed:', failureMessage);
+    return;
+  }
+  console.log('test passed:', successMessage);
+}
 
-
+expect(
+  favoriteAnimals.includes(nextAnimal),
+  'nextAnimal must match one of the favoriteAnimals, but currently equals ' + nextAnimal,
+  'nextAnimal matches one of the favoriteAnimals, and currently equals ' + nextAnimal);
