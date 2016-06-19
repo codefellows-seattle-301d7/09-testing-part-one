@@ -46,17 +46,33 @@ var favoriteAnimals = ['elephants', 'penguins', 'eagles', 'camels'];
 var nextAnimal;
 
   /* TODO:
-      Assign one of your favorite animals dynamically by chance to the 
+      Assign one of your favorite animals dynamically by chance to the
       nextAnimal variable   :-)
       Your code begins on the next line: */
+function getRandomMax(max) {
+  return Math.floor(Math.random() * max);
+}
+
+nextAnimal = favoriteAnimals[getRandomMax(favoriteAnimals.length)];
+
 
   /* TODO:
       Write a test! Use the `expect()` function we defined earlier to ensure
       that an element in the favoriteAnimals array was assigned to nextAnimal.
-      No hard-coded results allowed! (ex: seeing if nextAnimal is equal to 
+      No hard-coded results allowed! (ex: seeing if nextAnimal is equal to
       just 'penguin').
       Remember to: pass in your expression, and write a failure and a success
       message. Your test begins on the next line: */
+// nextAnimal = 'dog';
+console.log('running test on: "nextAnimal"');
+expect(
+  favoriteAnimals.includes(nextAnimal),
+  'nextAnimal should be one of the following ' + favoriteAnimals,
+  'great, lets go see the ' + nextAnimal + ' while we can'
+);
 
-
-
+/*
+for (i = 0; i < 20; i++) {
+  console.log(nextAnimal = favoriteAnimals[getRandomMax(favoriteAnimals.length)]);
+}
+*/
