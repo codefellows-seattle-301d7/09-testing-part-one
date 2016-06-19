@@ -63,7 +63,7 @@ nextAnimal = favoriteAnimals[getRandomMax(favoriteAnimals.length)];
       just 'penguin').
       Remember to: pass in your expression, and write a failure and a success
       message. Your test begins on the next line: */
-
+// nextAnimal = 'dog';
 console.log('running test on: "nextAnimal"');
 expect(
   favoriteAnimals.includes(nextAnimal),
